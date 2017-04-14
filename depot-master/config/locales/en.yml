@@ -1,0 +1,143 @@
+# encoding: utf-8
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  activerecord:
+    models:
+      cart: Cart
+      line_item: 'item of cart'
+      order:
+        one: 'Order'
+        other: 'Orders'
+      product:
+        one: Product
+        other: Products
+      user:
+        one: User
+        other: Users
+    attributes:
+      cart:
+        messages:
+          cart_is_empty: 'You cannot checkout when cart is empty'
+      line_item:
+        messages:
+          delete_successful: 'Product was successfully deleted from cart'
+      order:
+        name: 'Name'
+        address: 'Address'
+        email: 'Email'
+        payment_type: 'Payment type'
+        phone: Phone number
+        ship_date: 'Ship date'
+        submit: 'Send order'
+        messages:
+          created: Order was successfully created
+          destroyed: Order was successfully deleted
+          updated: Order was successfully updated
+      user:
+        avatar: Avatar
+  carts:
+    cart:
+      checkout: Checkout
+      empty_cart: Empty cart
+  hello: "Hello world"
+  helpers:
+    submit:
+      create: 'Create'
+      update: 'Update'
+      order:
+        create: 'Create order'
+        update: 'Update order'
+      product:
+        create: 'Create product'
+        update: 'Update product'
+      user:
+        create: 'Create user'
+        update: 'Update user'
+  orders:
+    form:
+      cash: Cash
+      check: Check
+      credit_card: Credit card
+      errors_present: Correct errors in form, please
+      pay_prompt_html: Select a payment method
+  store:
+    index:
+      add_html: Add to cart
+  app:
+    txt:
+      total: Total
+      products_catalog: Products catalog
+    actions:
+      back: 'Back'
+      create: 'Create'
+      destroy: 'Delete'
+      edit: 'Edit'
+      show: 'Show'
+    controllers:
+      session:
+        messages:
+          logout: 'Logout was successfull'
+          authorize_please: 'Please, authorize.'
+        errors:
+          auth_failed: 'Incorrect login or password'
+    models:
+      updated: 'Item was successfully updated'
+      created: 'Item was successfully created'
+    cart_was_destroyed: 'Cart was successfully destroyed.'
+    clean_cart: 'Clean cart'
+    delete_confirm: 'Are you sure?'
+    now: "Now"
+    your_page_views: 'Your views of this page'
+    notice:
+      destroyed: 'Item was destroyed'
+      not_destroyed: 'Item was not destroyed'
+      wait: Wait...
+  layouts:
+    application:
+      main: Main page
+      orders: Orders
+      products: Products
+      title: Pragmatic bookshelf
+      users: Users
+  misc:
+    kids:
+      zero: children
+      one: child
+      other: children
+    views:
+      one: 'view'
+      other: 'views'
+  reviews:
+    index:
+      no_reviews: No reviews
+      product_reviews: Reviews
+  number:
+    currency:
+      format:
+        unit: "$"
+        precision: 2
+        separator: "."
+        delimiter: ","
+        format: "%u%n"
+  thank_you: Thank you for your order. We will contact you soon.
+

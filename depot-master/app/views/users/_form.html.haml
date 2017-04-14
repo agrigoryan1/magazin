@@ -1,0 +1,29 @@
+= form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@user.errors.count, "error")} prohibited this user from being saved:"
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :avatar
+    - if @user.avatar.present?
+      = image_tag @user.avatar.url
+      %br
+    = f.file_field :avatar
+  - if params[:action] == "edit" || params[:action] == "update"
+    .field
+      = f.label :current_password
+      = f.password_field :current_password
+  .field
+    = f.label :password
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation
+  .actions
+    = f.submit

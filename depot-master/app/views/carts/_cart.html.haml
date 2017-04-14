@@ -1,0 +1,13 @@
+%h2.cart_title= t('activerecord.models.cart')
+
+%table
+  = render(@cart.line_items)
+
+  %tr.total_line
+    %td{colspan: 2} Всего
+    %td.total_cell= number_to_currency(@cart.total_price)
+    %td
+  %tr
+
+= button_to t('.checkout'), new_order_path, class: 'js-checkout', method: :get
+= button_to t('.empty_cart'), cart, method: :delete, remote: true

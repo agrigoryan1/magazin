@@ -1,0 +1,19 @@
+%h1= t('activerecord.attributes.product.messages.list')
+
+%table.products
+  - @products.each do |product|
+    %tr{class: "#{cycle('list_line_odd', 'list_line_even')}"}
+      %td
+        %p= image_tag(product.image_url, class: 'list_image')
+      
+      %td.list_description
+        %dl
+          %dt= link_to "#{product.title} [#{product.locale}]", product
+          %dd= truncate(strip_tags(product.description), length: 80)
+      
+      %td.list_actions
+        = link_to t('app.actions.edit'), edit_product_path(product)
+        %br/
+        = link_to t('app.actions.destroy'), product, method: :delete, data: { confirm: I18n.t('app.delete_confirm') }
+
+%p= link_to t('helpers.submit.product.create'), new_product_path

@@ -1,0 +1,8 @@
+%h1= t('helpers.submit.order.create')
+
+= render 'form'
+
+= link_to t('app.actions.back'), root_path
+
+:javascript
+  $('#cart .js-checkout').attr('disabled', true);

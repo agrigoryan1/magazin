@@ -1,0 +1,198 @@
+ru:
+  activerecord:
+    models:
+      cart: корзина
+      line_item: товар корзины
+      order:
+        one: Заказ
+        other: Заказы
+      product:
+        one: товар
+        other: товары
+      review:
+        one: отзыв
+        other: отзывы
+      user:
+        one: пользователь
+        other: пользователи
+    attributes:
+      cart:
+        messages:
+          cart_is_empty: Нельзя оформить заказ при пустой корзине
+      line_item:
+        messages:
+          delete_successful: Товар успешно удален из корзины
+      order:
+        name: Имя
+        address: Адрес доставки
+        email: Email
+        phone: Номер телефона
+        payment_type: Способ платежа
+        ship_date: Дата отправки
+        submit: Отправить заказ
+        messages:
+          created: Заказ успешно создан
+          destroyed: Заказ успешно удален
+          updated: Заказ успешно обновлен
+      user:
+        avatar: Аватарка
+        current_password: Текущий пароль
+        name: Имя пользователя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        messages:
+          created: "Пользователь %{name} был успешно создан"
+          creating: Создание пользователя
+          deleted: "Пользователь %{name} успешно удален"
+          editing: Редактирование пользователя
+          list: Список пользователей
+          updated: "Пользователь %{name} был успешно обновлен"
+      product:
+        price: Цена
+        description: Описание
+        locale: Язык
+        title: Заголовок
+        image_url: URL изображения
+        terms_of_service: Согласиться с условиями
+        messages:
+          editing: Редактирование товара
+          list: Список товаров
+    errors:
+      messages:
+        greater_than_or_equal_to: "должно быть больше или равно {{count}}"
+        blank: не может быть пустым
+      models:
+        order:
+          attributes:
+            payment_type_id:
+              inclusion: имеет недопустимое значение
+            phone:
+              too_long: слишком велик (максимум %{count} символов)
+              too_short: слишком мал (минимум %{count} символов)
+        product:
+          attributes:
+            title:
+              taken: с таким значением уже есть в базе данных
+              too_short: должен быть больше
+            price:
+              greater_than_or_equal_to: 'должно быть больше или равно {{count}}'
+              not_a_number: должно быть числом
+            terms_of_service:
+              accepted: необходимо принять
+        user:
+          attributes:
+            current_password:
+              invalid: неправильный
+            password_confirmation:
+              confirmation: должно совпадать с полем Пароль
+          messages:
+            cant_delete_last_user: Нельзя удалить из базы единственного пользователя
+  carts:
+    cart:
+      checkout: Оформить заказ
+      empty_cart: Очистить корзину
+  app:
+    txt:
+      total: Всего
+      products_catalog: Каталог товаров
+    actions:
+      back: Назад
+      create: Создать
+      destroy: Удалить
+      edit: Редактировать
+      show: Показать
+    controllers:
+      session:
+        messages:
+          logout: Сеанс работы завершен
+          authorize_please: Пожалуйста, авторизуйтесь
+        errors:
+          auth_failed: Неверная комбинация имени и пароля
+    models:
+      updated: Запись успешно обновлена
+      created: Запись успешно создана
+    cart_was_destroyed: Корзина была успешно очищена
+    clean_cart: Очистить корзину
+    delete_confirm: Вы уверены?
+    now: Сейчас
+    your_page_views: У вас
+    notice:
+      wait: Подождите...
+      destroyed: Элемент успешно удален
+      not_destroyed: Элемент не удалось удалить
+  formtastic:
+    :yes: 'Да'
+    :no: 'Нет'
+    :create: 'Создать %{model}'
+    :update: 'Обновить %{model}'
+    :submit: 'Сохранить %{model}'
+    :cancel: 'Отменить %{model}'
+    :reset: 'Сбросить %{model}'
+    :required: 'обязательно'
+  layouts:
+    application:
+      main: Главная
+      orders: Заказы
+      products: Продукты
+      title: Прагматичный магазин книг
+      users: Пользователи
+  helpers:
+    submit:
+      create: Создать
+      update: Обновить
+      order:
+        create: Создать заказ
+        update: Обновить заказ
+      product:
+        create: Создать товар
+        update: Обновить товар
+      user:
+        create: Создать пользователя
+        update: Обновить пользователя
+  orders:
+    form:
+      cash: Наличные
+      check: Чек
+      credit_card: Кредитная карта
+      errors_present: Пожалуйста, исправьте ошибки в форме
+      pay_prompt_html: Выберите метод платежа
+  store:
+    index:
+      add_html: Добавить в корзину
+  time:
+    formats:
+      statement_special: "%B/%Y г."
+      ru_datetime: "%d.%m.%Y, %H:%M"
+      default: "%d.%m.%Y, %H:%M"
+  date:
+    formats:
+      ru_month: "%B"
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: руб.
+  misc:
+    kids:
+      zero: 'детей'
+      one: 'ребенок'
+      few: 'ребенка'
+      many: 'детей'
+    views:
+      zero: 'просмотров'
+      one: 'просмотр'
+      few: 'просмотра'
+      many: 'просмотров'
+  reviews:
+    index:
+      no_reviews: Нет отзывов
+      product_reviews: Отзывы
+  errors:
+    messages:
+      taken: с таким значением уже есть в базе данных
+  thank_you: Спасибо за заказ! Мы свяжемся с Вами в ближайшее время

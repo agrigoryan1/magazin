@@ -1,0 +1,15 @@
+%p
+  %strong= t('activerecord.attributes.order.name')
+  = @order.name
+%p
+  %strong= t('activerecord.attributes.order.address')
+  = @order.address
+%p
+  %strong= t('activerecord.attributes.order.email')
+  = @order.email
+%p
+  %strong= t('activerecord.attributes.order.payment_type')
+  = @order.payment_type.title
+= link_to t('app.actions.edit'), edit_order_path(@order)
+|
+= link_to t('app.actions.back'), orders_path

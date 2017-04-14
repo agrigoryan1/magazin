@@ -1,0 +1,8 @@
+%h1 Upload new picture
+
+= form_for(:picture, url: {action: 'create'}, html: {multipart: true}) do |form|
+  %p Комментарий:
+  = form.text_field('comment')
+  %p Выложите изображение:
+  = form.file_field('uploaded_picture')
+  %p= submit_tag('Выложить файл')
